@@ -5,7 +5,7 @@ using System.Net.Http.Headers;
 // if youra using dynamics crm on premise with active directory and dont active directory factory service or Azure AD
 // u can use Azure AD with on-premise for credentatial (recomended) or active diretory factory service
 // this is the 3. option that use credendatial 
-// planning to create .net core library for remote user and role based soon..
+// planning to create .net core library for remote user and role based access soon..
 
 
 string userName = "yourUserName"; // for active directory environment crm users userName and active directory userName should be same 
@@ -19,7 +19,7 @@ var credentials = new NetworkCredential(userName, password);
 
 var client = getNewHttpClient(userName, password, domain, baseAdd);
 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-var response = client.GetAsync("accounts?$top=1").Result;
+var response = client.GetAsync("accounts?$top=1").Result; // simple o data select top 1 from accounts entity for more : https://docs.microsoft.com/en-us/power-apps/developer/data-platform/webapi/query-data-web-api
 if (response.IsSuccessStatusCode)
 {
     var yourcustomobjects = response.Content.ReadAsStringAsync();
