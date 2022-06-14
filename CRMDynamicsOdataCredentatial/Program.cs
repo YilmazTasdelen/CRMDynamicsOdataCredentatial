@@ -8,8 +8,8 @@ using System.Net.Http.Headers;
 // planning to create .net core library for remote user and role based soon..
 
 
-string userName = "yourUserName";
-string password = "yourPasword";
+string userName = "yourUserName"; // for active directory environment crm users userName and active directory userName should be same 
+string password = "yourPasword";  // for active directory environment crm users password and active directory password should be same 
 string domain = "domain";
 string baseAdd = "yourODataUrl"; // something like http://<domainbaseUrl>/<domain>/api/data/v8.0/accounts
 
